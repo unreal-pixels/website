@@ -33,6 +33,7 @@
     "rules": {
         "@typescript-eslint/strict-boolean-expressions": 0,
         "@typescript-eslint/prefer-nullish-coalescing": 0,
+        "@typescript-eslint/space-before-function-paren": 0,
         "semi": ["error", "always"],
         "@typescript-eslint/semi": ["error", "always"],
         "comma-dangle": ["error", "always-multiline"],

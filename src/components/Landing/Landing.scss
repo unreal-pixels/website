@@ -4,9 +4,21 @@
   display: table;
   width: 100%;
   height: 100vh;
-  background: url('./background.jpg') top center;
+  background-position: top center;
   background-size: cover;
   margin-top: $header-size;
+
+  &.image-1 {
+    background-image: url('./background-1.jpg');
+  }
+
+  &.image-2 {
+    background-image: url('./background-2.jpg');
+  }
+
+  &.image-3 {
+    background-image: url('./background-3.jpg');
+  }
 
   .hero-logo {
     margin: 20px;

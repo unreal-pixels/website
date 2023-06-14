@@ -4,6 +4,10 @@ import logo from './logo.svg';
 import { type RouteComponentProps, withRouter } from 'react-router-dom';
 
 class Landing extends React.Component<RouteComponentProps> {
+  private get imageId(): string {
+    return String(Math.floor(Math.random() * 3) + 1);
+  }
+
   componentDidMount (): void {
     const typed = document.querySelector('.typed') as HTMLDivElement;
 
@@ -28,7 +32,7 @@ class Landing extends React.Component<RouteComponentProps> {
     const { history } = this.props;
 
     return (
-      <section id="hero">
+      <section id="hero" className={`image-${this.imageId}`}>
         <div className="hero-container">
           <div data-aos="fade-in">
             <div className="hero-logo">
