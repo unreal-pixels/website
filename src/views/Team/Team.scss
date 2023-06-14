@@ -1,0 +1,49 @@
+@import '../../styles/variables';
+
+#team {
+  background: $page-background;
+  padding: 120px 0 60px 0;
+
+  .member {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .member .pic {
+    margin-bottom: 15px;
+    overflow: hidden;
+    height: 260px;
+  }
+
+  .member .pic img {
+    max-width: 100%;
+  }
+
+  .member h4 {
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+
+  .member span {
+    font-style: italic;
+    display: block;
+    font-size: 16px;
+  }
+
+  .member .social {
+    margin-top: 15px;
+  }
+
+  .member .social a {
+    color: $text-color;
+  }
+
+  .member .social a:hover {
+    color: $primary-color;
+  }
+
+  .member .social i {
+    font-size: 18px;
+    margin: 0 6px;
+  }
+}

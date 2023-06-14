@@ -1,0 +1,46 @@
+@import '../../styles/variables';
+
+#about {
+  background: $page-background;
+  padding: 120px 0;
+
+  .about-img {
+    overflow: hidden;
+  }
+
+  .about-img img {
+    max-width: 100%;
+  }
+
+  .about-content {
+    background: $page-background;
+  }
+
+  .about-title {
+    color: $primary-color;
+    font-weight: 700;
+    font-size: 28px;
+  }
+
+  .about-text {
+    line-height: 26px;
+    margin-bottom: 15px;
+  }
+
+  .about-text:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #about {
+    .about-img {
+      height: auto;
+    }
+
+    .about-img img {
+      margin-left: 0;
+      padding-bottom: 30px;
+    }
+  }
+}

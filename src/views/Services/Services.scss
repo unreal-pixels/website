@@ -1,0 +1,55 @@
+@import '../../styles/variables';
+
+#services {
+  background: $page-background;
+  padding: 120px 0 60px 0;
+
+  .service-item {
+    margin-bottom: 20px;
+  }
+
+  .service-icon {
+    float: left;
+    background: $primary-color;
+    border-radius: 50%;
+    transition: 0.5s;
+    border: 3px solid $primary-color;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+  }
+
+  .service-icon i {
+    color: $text-color;
+    font-size: 24px;
+    line-height: 0;
+  }
+
+  .service-item:hover .service-icon {
+    background: transparent;
+    border: 3px solid $secondary-color;
+  }
+
+  .service-item:hover {
+    .service-icon i,
+    h4 {
+      color: $secondary-color;
+    }
+  }
+  
+  .service-title {
+    color: $primary-color;
+    margin-left: 80px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    margin-top: 18px;
+    text-transform: uppercase;
+  }
+
+  .service-description {
+    margin-left: 80px;
+    line-height: 24px;
+  }
+}
