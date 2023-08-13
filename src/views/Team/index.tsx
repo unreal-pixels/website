@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import React from 'react';
 import './Team.scss';
+import DavidPic from './david.jpg';
 
 interface TeamMember {
   name: string
@@ -18,7 +19,7 @@ export default class Team extends React.Component {
     {
       name: 'David Bradshaw',
       role: 'UI/UX Engineer',
-      image: require('./david.jpg') as string,
+      image: DavidPic as string,
       linkedIn: 'https://linkedin.com/in/davidbradshawus',
       github: 'https://github.com/dabrad26',
       site: 'https://davidbradshaw.us',

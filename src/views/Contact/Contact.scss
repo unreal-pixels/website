@@ -3,4 +3,47 @@
 #contact {
   background: $page-background;
   padding: 120px 0 120px 0;
+
+  .contact-img {
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+
+  .contact-img img {
+    max-width: 100%;
+  }
+
+  .contact-content {
+    background: $page-background;
+  }
+
+  .form-control {
+    border: 1px solid $primary-color;
+    border-radius: 0;
+    margin-bottom: 1rem;
+    background-color: $background-color;
+    color: $text-color;
+
+    @include placeholder {
+      color: $text-color;
+      opacity: 0.6;
+    }
+  }
+
+  .button-submit {
+    @include base-button();
+
+    background: $primary-color;
+    border: 2px solid $primary-color;
+    color: $text-color;
+    margin-left: 0;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
 }

@@ -38,6 +38,7 @@
         "@typescript-eslint/semi": ["error", "always"],
         "comma-dangle": ["error", "always-multiline"],
         "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
+        "@typescript-eslint/prefer-readonly": "off",
         "spellcheck/spell-checker": ["error", {
             "lang": "en_US",
             "comments": true,
@@ -62,7 +63,11 @@
                 "mr",
                 "woff",
                 "woff2",
-                "ssl"
+                "ssl",
+                "svg",
+                "gif",
+                "axios",
+                "href"
            ]
         }]
     }
