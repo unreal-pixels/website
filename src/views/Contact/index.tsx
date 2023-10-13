@@ -63,16 +63,8 @@ export default class Contact extends React.Component {
             </div>
 
             <div className="row justify-content-center">
-              <div className="col-lg-6 contact-img">
+              <div className="col-lg-12 contact-img">
                 <img src={areaImage as string} alt="About us group" />
-              </div>
-
-              <div className="col-lg-6 contact-content">
-                <input type="text" className="form-control" id="name" name="name" value={name} onChange={event => { this.setState({ name: event.target.value }); }} required={true} placeholder="Name" />
-                <input type="email" className="form-control" id="email" name="email" value={email} onChange={event => { this.setState({ email: event.target.value }); }} required={true} placeholder="Email" />
-                <input type="text" className="form-control" id="subject" name="subject" value={subject} onChange={event => { this.setState({ subject: event.target.value }); }} required={true} placeholder="Subject" />
-                <textarea className="form-control" name="message" id="message" value={message} onChange={event => { this.setState({ message: event.target.value }); }} rows={1} required={true} placeholder="Message"></textarea>
-                <button type="button" className="button-submit" onClick={this.sendContact} disabled={this.invalidForm}>Send Message</button>
               </div>
             </div>
           </div>
