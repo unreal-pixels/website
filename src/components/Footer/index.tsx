@@ -10,7 +10,7 @@ export default class Footer extends React.Component {
             <div className="col-md-12">
               <div className="social">
                 <a href="https://www.instagram.com/unreal.pixels" title="Instagram"><i className="bi bi-instagram"></i></a>
-                <a href="https://discord.gg/pzct3dFE" title="Discord Server"><i className="bi bi-discord"></i></a>
+                <a href="https://discord.gg/8jZBs8DJ" title="Discord Server"><i className="bi bi-discord"></i></a>
                 <a href="https://www.linkedin.com/company/unrealpixels" title="LinkedIn"><i className="bi bi-linkedin"></i></a>
               </div>
               <div className="copyright">
