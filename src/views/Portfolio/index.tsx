@@ -1,34 +1,36 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import React from 'react';
 import './Portfolio.scss';
+import Axios from 'axios';
 
-type FilterTypes = 'web' | 'app' | 'server' | 'it';
+type FilterTypes = 'web' | 'mobile' | 'server' | 'it';
 
 interface PortfolioItem {
-  type: FilterTypes
+  type: FilterTypes[]
   image: string
   name: string
   id: string
+  link: string
 }
 
 export default class Portfolio extends React.Component {
   state = {
     filter: undefined as FilterTypes | undefined,
+    loading: true,
   };
 
-  private readonly portfolioFullList: PortfolioItem[] = [
-  ];
+  private portfolioFullList: PortfolioItem[] = [];
 
   private get portfolioItems (): PortfolioItem[] {
     const { filter } = this.state;
 
-    return filter ? this.portfolioFullList.filter(item => item.type === filter) : this.portfolioFullList;
+    return filter ? this.portfolioFullList.filter(item => item.type.includes(filter)) : this.portfolioFullList;
   }
 
   private getTypeName (type: FilterTypes): string {
     const typeMap = {
       web: 'Web',
-      app: 'Mobile app',
+      mobile: 'Mobile app',
       server: 'Server/API',
       it: 'IT Services',
     };
@@ -38,14 +40,14 @@ export default class Portfolio extends React.Component {
 
   private getPortfolioEntry (item: PortfolioItem): React.ReactNode {
     return (
-            <div className="col-lg-4 col-md-6 portfolio-item" key={item.id}>
-                <img src={item.image} className="img-fluid" alt={item.name} />
-                <div className="portfolio-info">
-                <h4>{item.name}</h4>
-                <p>{this.getTypeName(item.type)}</p>
-                <a href={`/projects/${item.id}`} className="details-link" title="More Details"><i className="bi bi-box-arrow-up-right"></i></a>
-                </div>
-            </div>
+      <button type="button" onClick={() => { window.open(item.link, '_blank'); }} className="col-lg-4 col-md-6 portfolio-item" key={item.id}>
+          <img src={item.image} className="img-fluid" alt={item.name} />
+          <div className="portfolio-info">
+          <h4>{item.name}</h4>
+          <p>{item.type.map(type => this.getTypeName(type)).join(', ')}</p>
+          <span className="details-link" title="More Details"><i className="bi bi-box-arrow-up-right"></i></span>
+          </div>
+      </button>
     );
   }
 
@@ -55,18 +57,32 @@ export default class Portfolio extends React.Component {
 
   private get noItems (): React.ReactNode {
     return (
-            <div className="row">
-                <div className="col-md-12">
-                    <h4 className="section-subtitle">No results</h4>
-                    <p className="section-description">No items exist. Try changing the filter or check back later.</p>
-                </div>
-            </div>
+      <div className="row">
+        <div className="col-md-12">
+          <h4 className="section-subtitle">No results</h4>
+          <p className="section-description">No items exist. Try changing the filter or check back later.</p>
+        </div>
+      </div>
     );
   }
 
+  componentDidMount(): void {
+    Axios.get('/api/portfolio-items.json').then(response => {
+      this.portfolioFullList = response.data as PortfolioItem[];
+      this.setState({ loading: false });
+    }).catch(error => {
+      console.error('Portfolio: unable to get items', error);
+      this.setState({ loading: false });
+    });
+  }
+
   render (): React.ReactNode {
-    const { filter } = this.state;
+    const { filter, loading } = this.state;
     const items = this.portfolioItems;
+
+    if (loading) {
+      return null;
+    }
 
     return (
         <section id="portfolio">
@@ -84,7 +100,7 @@ export default class Portfolio extends React.Component {
                     <ul id="portfolio-filters">
                     <li onClick={() => { this.changeFilter(undefined); }} className={filter === undefined ? 'filter-active' : ''}>All</li>
                     <li onClick={() => { this.changeFilter('web'); }} className={filter === 'web' ? 'filter-active' : ''}>{this.getTypeName('web')}</li>
-                    <li onClick={() => { this.changeFilter('app'); }} className={filter === 'app' ? 'filter-active' : ''}>{this.getTypeName('app')}</li>
+                    <li onClick={() => { this.changeFilter('mobile'); }} className={filter === 'mobile' ? 'filter-active' : ''}>{this.getTypeName('mobile')}</li>
                     <li onClick={() => { this.changeFilter('server'); }} className={filter === 'server' ? 'filter-active' : ''}>{this.getTypeName('server')}</li>
                     <li onClick={() => { this.changeFilter('it'); }} className={filter === 'it' ? 'filter-active' : ''}>{this.getTypeName('it')}</li>
                     </ul>

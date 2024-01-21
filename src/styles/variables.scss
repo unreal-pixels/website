@@ -31,6 +31,15 @@ $header-size: 70px;
   }
 }
 
+@mixin button-reset {
+  margin: 0;
+  padding: 0;
+  text-align: initial;
+  border: none;
+  display: inline-block;
+  background: none;
+}
+
 @mixin base-button {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
