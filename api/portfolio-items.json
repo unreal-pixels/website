@@ -1,0 +1,9 @@
+[
+  {
+    "type": ["web"],
+    "image": "/images/json-linter.jpg",
+    "name": "JSON Linter",
+    "id": "json-linter",
+    "link": "https://jsonlinter.unrealpixels.com"
+  }
+]
