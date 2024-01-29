@@ -15,6 +15,7 @@ export default class Footer extends React.Component {
               </div>
               <div className="copyright">
                 &copy; Copyright <strong>Unreal Pixels</strong>. All Rights Reserved.
+                <a href="/privacy-policy.txt" className="privacy-policy" target="_blank">Privacy Policy</a>
               </div>
             </div>
           </div>

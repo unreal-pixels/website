@@ -67,7 +67,8 @@
                 "svg",
                 "gif",
                 "axios",
-                "href"
+                "href",
+                "txt"
            ]
         }]
     }
