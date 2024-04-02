@@ -5,5 +5,12 @@
     "name": "JSON Linter",
     "id": "json-linter",
     "link": "https://jsonlinter.unrealpixels.com"
+  },
+  {
+    "type": ["web"],
+    "image": "/images/xml-linter.jpg",
+    "name": "XML Linter",
+    "id": "xml-linter",
+    "link": "https://xmllinter.unrealpixels.com"
   }
 ]
