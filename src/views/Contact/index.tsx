@@ -49,7 +49,7 @@ export default class Contact extends React.Component {
   }
 
   render (): React.ReactNode {
-    const { name, email, subject, message } = this.state;
+    // const { name, email, subject, message } = this.state;
 
     return (
         <section id="contact">
@@ -58,7 +58,7 @@ export default class Contact extends React.Component {
               <div className="col-md-12">
                 <h3 className="section-title">Contact Us</h3>
                 <div className="section-title-divider"></div>
-                <p className="section-description">Serving Orange County and all of SoCal.</p>
+                <p className="section-description">Serving Silicon Valley and all of the Bay Area.</p>
               </div>
             </div>
 

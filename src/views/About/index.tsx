@@ -11,7 +11,7 @@ export default class About extends React.Component {
                 <div className="col-md-12">
                   <h3 className="section-title">About Us</h3>
                   <div className="section-title-divider"></div>
-                  <p className="section-description">We are a group of developers providing web and app development services in Orange County California.</p>
+                  <p className="section-description">We are a group of developers providing web and app development services in the San Francisco Bay Area.</p>
                 </div>
             </div>
             </div>
